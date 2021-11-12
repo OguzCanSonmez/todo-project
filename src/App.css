@@ -1,0 +1,28 @@
+body {
+  text-align: center;
+}
+
+.items {
+  margin-top: 1rem;
+}
+
+.item {
+  width: 25%;
+  margin: 0 auto 1rem;
+  border: 1px solid blue;
+  position: relative;
+  font-weight: bold;
+}
+
+.item div {
+  padding: 0.5rem 0;
+}
+
+.del {
+  background-color: red;
+  position: absolute;
+  top: 0;
+  right: -38px;
+  z-index: 999;
+  padding: 0.5rem 0.75rem;
+}
