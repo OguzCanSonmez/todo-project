@@ -28,6 +28,11 @@ function App() {
     );
   };
 
+  // Delete item from todo list
+  const deleteItem = (item) => {
+    setTask(tasks.filter((el) => el.id !== item.id));
+  };
+
   return (
     <div>
       <h1>TO DO PROJECT</h1>
@@ -41,7 +46,7 @@ function App() {
         {tasks.map((item) => (
           <div key={item.id} className={item.isDone ? "item ok" : "item"}>
             <div onClick={() => updateItem(item.id)}>{item.content}</div>
-            <span className="del">X</span>
+            <span className="del" onClick={() => deleteItem(item)}>X</span>
           </div>
         ))}
       </div>
