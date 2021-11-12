@@ -18,6 +18,10 @@ body {
   padding: 0.5rem 0;
 }
 
+.ok {
+  text-decoration: line-through;
+}
+
 .del {
   background-color: red;
   position: absolute;

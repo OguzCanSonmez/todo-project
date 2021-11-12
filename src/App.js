@@ -21,6 +21,13 @@ function App() {
     }
   };
 
+  // Is task completed or not
+  const updateItem = (id) => {
+    setTask(
+      tasks.map((el) => (el.id === id ? { ...el, isDone: !el.isDone } : el))
+    );
+  };
+
   return (
     <div>
       <h1>TO DO PROJECT</h1>
@@ -32,8 +39,8 @@ function App() {
       <button onClick={() => addNew(newTask)}>Add</button>
       <div className="items">
         {tasks.map((item) => (
-          <div key={item.id} className="item">
-            <div>{item.content}</div>
+          <div key={item.id} className={item.isDone ? "item ok" : "item"}>
+            <div onClick={() => updateItem(item.id)}>{item.content}</div>
             <span className="del">X</span>
           </div>
         ))}
